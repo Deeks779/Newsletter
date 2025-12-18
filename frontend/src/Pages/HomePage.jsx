@@ -7,9 +7,9 @@ import {
 } from "@heroui/react";
 import NavbarPart from "../Component/Navbar";
 import {Twitter,Linkedin,Instagram,Facebook} from "lucide-react"
-import {quarterImg} from "/src/assets/image/quarter2.png"
-import {quarterImg2} from "/src/assets/image/quater1.png"
-import {quarterImg3} from "/src/assets/image/bottonRight.png"
+import quarterImg from "/src/assets/image/quarter2.png"
+import quarterImg2 from "/src/assets/image/quater1.png"
+import quarterImg3 from "/src/assets/image/bottonRight.png"
 
 export default function HomePage() {
     const upcomming=[{ d: 14, t: "Green Committee" }, { d: 21, t: "Annual General Meeting" }, { d: 29, t: "Equality Webinar" }]
