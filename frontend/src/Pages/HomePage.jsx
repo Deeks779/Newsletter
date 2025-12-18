@@ -7,6 +7,10 @@ import {
 } from "@heroui/react";
 import NavbarPart from "../Component/Navbar";
 import {Twitter,Linkedin,Instagram,Facebook} from "lucide-react"
+import {quarterImg} from "/src/assets/image/quarter2.png"
+import {quarterImg2} from "/src/assets/image/quater1.png"
+import {quarterImg3} from "/src/assets/image/bottonRight.png"
+
 export default function HomePage() {
     const upcomming=[{ d: 14, t: "Green Committee" }, { d: 21, t: "Annual General Meeting" }, { d: 29, t: "Equality Webinar" }]
   return (
@@ -15,12 +19,12 @@ export default function HomePage() {
       <section className="relative  mx-auto px-6 py-10 grid md:grid-cols-2 gap-10 items-center overflow-hidden">
 
       <img
-        src="/src/assets/image/quater1.png"  
+        src={quarterImg2}
         alt=""
         className="absolute top-0 left-0 w-80 h-80 pointer-events-none"
       />
       <img
-        src="/src/assets/image/quarter2.png"   
+        src={quarterImg}
         alt=""
         className="absolute bottom-25 right-0 w-80 h-80 z-0 pointer-events-none"
       />
@@ -96,7 +100,7 @@ export default function HomePage() {
       {/* EVENTS */}
       <section className="relative py-16 bg-[#0b1f36]">
         <img
-          src="/src/assets/image/bottonRight.png"   
+          src={quarterImg3}   
           alt=""
           className="absolute bottom-0 right-0 w-100 h-100 opacity-80 z-0 pointer-events-none"
         />
