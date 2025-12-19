@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Search,BellDot } from "lucide-react";
+import { Search,BellDot, Settings, LogOut } from "lucide-react";
 import {
   Button,
   Card,
-  CardHeader,
+  CardBody,
   Input,
   Link,
   Navbar,
@@ -19,27 +19,51 @@ import {
   User,
 } from "@heroui/react";
 import { notifications } from '../assets/SampleInformation';
+import { useNavigate } from 'react-router-dom';
 function NavbarPart() {
   const [isMenuopen,setIsMenuOpen]=useState(false);
   const menuItems=[
     "About Us", "News & Events","Employee Center", "Resource Library","Communities"
   ]
   const [isLoggedIn, setisLoggedIn]=useState(false);
-  const ProfileMenu=()=>{
-    return (
-      <Card>
-          <Button color="danger" onPress={()=>setisLoggedIn(!isLoggedIn)} size="sm">
-            LogOut
-          </Button>
-      </Card>
-    )
-  }
+const ProfileMenu = () => {
+  const navigate = useNavigate();
+
+  return (
+    <Card className="min-w-45 shadow-none">
+      <CardBody className="p-2 gap-1">
+        <Button
+          variant="light"
+          className="justify-start gap-2"
+          onPress={() => navigate("/profile")}
+        >
+          <Settings size={16} />
+          Settings
+        </Button>
+        <Button
+          variant="light"
+          color="danger"
+          className="justify-start gap-2"
+          onPress={() => setisLoggedIn(false)}
+        >
+          <LogOut size={16} />
+          Logout
+        </Button>
+
+      </CardBody>
+    </Card>
+  );
+};
   return (
     <div>
       <Navbar maxWidth="full" className="bg-white" onMenuOpenChange={setIsMenuOpen}>
         <NavbarMenuToggle aria-label={isMenuopen?"Close menu":"Open menu"}
         className="sm:hidden text-[#0b1f36]"/>
-        <NavbarBrand className="font-bold text-xl text-[#0b1f36]">Clarke <span className='pl-1 pr-1 text-[#BBA782]'>&</span> Co.</NavbarBrand>
+        <NavbarBrand className="font-bold text-xl text-[#0b1f36]" >
+          <Link href="/" className="text-[#0b1f36] hover:opacity-80" showAnchorIcon={false}>
+          <span className='text-xl'>Clarke <span className='pl-1 pr-1 text-[#BBA782]'>&</span> Co.</span>
+          </Link>
+        </NavbarBrand>
         <NavbarContent className="hidden md:flex gap-6 text-[#0b1f36]" justify="center">
           <NavbarItem>About Us</NavbarItem>
           <NavbarItem>News & Events</NavbarItem>
@@ -74,7 +98,7 @@ function NavbarPart() {
                             <BellDot size={20} />
                           </Button>
                         </PopoverTrigger>
-                    <PopoverContent className="w-[300px]">
+                    <PopoverContent className="w-75">
                       {(titleProps) => (
                         <div className="px-1 py-2 w-full">
                           <p

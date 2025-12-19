@@ -1,21 +1,25 @@
-import React from 'react'
+import { Routes, Route } from 'react-router-dom';
 import HomePage from './Pages/HomePage'
-import {House,ChartColumn,Boxes,Paperclip} from 'lucide-react'
 import NavbarPart from './Component/Navbar'
 import Footer from './Component/Footer'
+import ProfilePage from './Pages/Profile';
+import Sidebar from './Component/Sidebar';
 function App() {
   return (
-    <div className='flex w-screen min-h-screen'>
-      <div className="hidden sm:block w-[4%] bg-[#BBA782]">
-        <div className='flex flex-col gap-y-5 text-white pt-50 pl-[20%] cursor-pointer '>
-        <House/> <Boxes/> <Paperclip/> <ChartColumn/>
-        </div>
-      </div>
-      <div className="w-[96%] "> 
+    <div className="flex min-h-screen w-screen">
+
+      <aside className="hidden sm:flex w-16 bg-[#BBA782] flex-col items-center py-80">
+        <Sidebar/>
+      </aside>
+
+      <main className="flex-1 bg-gray-50">
         <NavbarPart/>
-        <HomePage/>
+        <Routes>
+          <Route path='/' element={<HomePage/>}/>
+          <Route path='/profile' element={<ProfilePage/>}/>
+        </Routes>
         <Footer/>
-        </div>
+    </main>
     </div>
   )
 }
