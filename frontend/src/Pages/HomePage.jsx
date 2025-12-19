@@ -6,7 +6,6 @@ import {
   Image,
 } from "@heroui/react";
 import NavbarPart from "../Component/Navbar";
-import {Twitter,Linkedin,Instagram,Facebook} from "lucide-react"
 import quarterImg from "/src/assets/image/quarter2.png"
 import quarterImg2 from "/src/assets/image/quater1.png"
 import quarterImg3 from "/src/assets/image/bottonRight.png"
@@ -15,7 +14,6 @@ export default function HomePage() {
     const upcomming=[{ d: 14, t: "Green Committee" }, { d: 21, t: "Annual General Meeting" }, { d: 29, t: "Equality Webinar" }]
   return (
     <div className="min-h-screen bg-[#0b1f36] text-white">
-        <NavbarPart/>
       <section className="relative  mx-auto px-6 py-10 grid md:grid-cols-2 gap-10 items-center overflow-hidden">
 
       <img
@@ -126,11 +124,7 @@ export default function HomePage() {
           )}
         </div>
       </section>
-      {/* FOOTER */}
-      <footer className="py-10 text-center text-sm bg-black ">
-        <div className="pl-[44%] flex gap-2 items-center"><Twitter/> <Linkedin/> <Facebook/> <Instagram/></div>
-        © Clarke & Co. · Powered by Interact
-      </footer>
+     
     </div>
   );
 }

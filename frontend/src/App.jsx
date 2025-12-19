@@ -1,6 +1,8 @@
 import React from 'react'
 import HomePage from './Pages/HomePage'
 import {House,ChartColumn,Boxes,Paperclip} from 'lucide-react'
+import NavbarPart from './Component/Navbar'
+import Footer from './Component/Footer'
 function App() {
   return (
     <div className='flex w-screen min-h-screen'>
@@ -9,7 +11,11 @@ function App() {
         <House/> <Boxes/> <Paperclip/> <ChartColumn/>
         </div>
       </div>
-      <div className="w-[96%] "> <HomePage/></div>
+      <div className="w-[96%] "> 
+        <NavbarPart/>
+        <HomePage/>
+        <Footer/>
+        </div>
     </div>
   )
 }
