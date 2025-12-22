@@ -4,6 +4,7 @@ import NavbarPart from './Component/Navbar'
 import Footer from './Component/Footer'
 import ProfilePage from './Pages/Profile';
 import Sidebar from './Component/Sidebar';
+import AuthPage from './Pages/AuthPage';
 function App() {
   return (
     <div className="flex min-h-screen w-screen">
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/' element={<HomePage/>}/>
           <Route path='/profile' element={<ProfilePage/>}/>
+          <Route path='/auth' element={<AuthPage/>}/>
         </Routes>
         <Footer/>
     </main>
