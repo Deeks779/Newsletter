@@ -94,7 +94,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* EVENTS */}
       <section className="relative py-16 bg-[#0b1f36]">
         <img
           src={quarterImg3}   

@@ -11,11 +11,11 @@ function NavbarPart() {
   const navigate = useNavigate();
 
   const menuItems = [
-    "About Us",
-    "News & Events",
-    "Employee Center",
-    "Resource Library",
-    "Communities",
+    {name:"About Us",url:"/about"},
+    {name:"News & Events",url:"/events"},
+    {name:"Employee Center",url:"/emp-center"},
+    {name:"Resource Library",url:"/library"},
+    {name:"Communities",url:"/communities"},
   ];
 
   useEffect(() => {
@@ -66,7 +66,9 @@ function NavbarPart() {
         justify="center"
       >
         {menuItems.map((item) => (
-          <NavbarItem key={item}>{item}</NavbarItem>
+          <NavbarItem key={item.name}>
+            <Link href={item.url} className="text-[#0b1f36] hover:opacity-80">{item.name}</Link>
+          </NavbarItem>
         ))}
       </NavbarContent>
 
