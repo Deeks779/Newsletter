@@ -174,8 +174,8 @@ function NavbarPart() {
       <NavbarMenu>
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full text-[#0b1f36]" href="#">
-              {item}
+            <Link className="w-full text-[#0b1f36]" href={item.url}>
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}

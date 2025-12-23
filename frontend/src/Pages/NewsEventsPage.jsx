@@ -3,8 +3,6 @@ import {
   CardBody,
   CardHeader,
   Input,
-  Select,
-  SelectItem,
 } from "@heroui/react";
 import { Search,ChevronLeft, ChevronRight } from "lucide-react";
 import ZoomImage from "../Component/ZoomImage";
