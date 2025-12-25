@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, BellDot, Settings, LogOut } from "lucide-react";
+import { Search, BellDot, Settings, LogOut, Users, Newspaper } from "lucide-react";
 import { Button, Card, CardBody, Input, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Popover, PopoverContent, PopoverTrigger, User,} from "@heroui/react";
 import { notifications } from "../assets/SampleInformation";
 import { useNavigate } from "react-router-dom";
@@ -31,6 +31,17 @@ function NavbarPart() {
   const ProfileMenu = () => (
     <Card className="min-w-45 shadow-none">
       <CardBody className="p-2 gap-1">
+        {currentUser?.role === "admin" && (
+        <>
+          <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/admin/users")}>
+            <Users size={16}/>  View Users
+          </Button>
+
+          <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/admin/news")}>
+           <Newspaper size={16}/> Publish News
+          </Button>
+        </>
+      )}
         <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/profile")}>
           <Settings size={16} />
           Settings

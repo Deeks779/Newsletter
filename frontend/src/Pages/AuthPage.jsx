@@ -8,6 +8,7 @@ const defaultUser = {
   name: "Test User",
   email: "test@example.com",
   password: "123456",
+  role :"admin"
 };
 
 export default function AuthPage() {
@@ -22,7 +23,11 @@ export default function AuthPage() {
   }, []);
 
   const { register: loginRegister, handleSubmit: handleLogin } = useForm();
-  const { register: signupRegister, handleSubmit: handleSignup } = useForm();
+  const { register: signupRegister, handleSubmit: handleSignup } = useForm({
+    defaultValues:{
+      role:"user"
+    }
+  });
 
   const onLogin = (data) => {
     try {
