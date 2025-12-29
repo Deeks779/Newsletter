@@ -50,9 +50,7 @@ export default function AuthPage() {
 
   return (
     <div className="min-h-screen flex items-center justify-center bg-[#0b1f36]">
-
-      <div className="relative w-225 h-130 bg-white rounded-2xl overflow-hidden">
-
+      <div className="hidden md:block relative w-225 h-130 bg-white rounded-2xl overflow-hidden">
         <div
           className={`absolute inset-0 w-full h-full flex transition-transform duration-700
           ${isSignIn ? "translate-x-0" : "translate-x-0"}`}
@@ -129,7 +127,6 @@ export default function AuthPage() {
             </Card>
           </div>
         </div>
-
         {/* OVERLAY PANEL */}
         <div
           className={`absolute top-0 right-0 w-1/2 h-full bg-[#BBA782] text-[#0b1f36]
@@ -163,7 +160,103 @@ export default function AuthPage() {
             </>
           )}
         </div>
+      </div>
+      {/* Mobile View  */}
+      <div className="md:hidden w-225 h-140 ">
+        {/* Sign Up  */}
+        {
+          !isSignIn && (
+            <>
+            <div className="w-full flex items-center justify-center">
+            <Card shadow="none" className="w-[80%]">
+              <CardBody className="gap-4">
+                <h2 className="text-2xl font-semibold text-center">
+                  Create Account
+                </h2>
+                <form
+                  className="flex flex-col gap-4"
+                  onSubmit={handleSignup(onSignup)}
+                >
+                  <Input
+                    label="Name"
+                    variant="bordered"
+                    {...signupRegister("name", { required: true })}
+                  />
+                  <Input
+                    label="Email"
+                    type="email"
+                    variant="bordered"
+                    {...signupRegister("email", { required: true })}
+                  />
+                  <Input
+                    label="Password"
+                    type="password"
+                    variant="bordered"
+                    {...signupRegister("password", { required: true })}
+                  />
+                  <Button type="submit" className="bg-[#BBA782] text-white">
+                    Sign Up
+                  </Button>
+                </form>
+                <div className=" flex text-sm justify-center">
+                  Already have account?
+                  <Button onPress={()=>setIsSignIn(true)} variant="flat" className="bg-white font-semibold text-[#0b1f36] pb-3" size="sm">SignIn</Button>
+                </div>
+              </CardBody>
+            </Card>
+        </div>
+            </>
+          )
+        }
+          {/* SIGN IN */}
+          {
+            isSignIn && (
+              <>
+              <div className="w-full flex items-center justify-center">
+            <Card shadow="none" className="w-[80%]">
+              <CardBody className="gap-4">
+                <h2 className="text-2xl font-semibold text-center">
+                  Sign In
+                </h2>
 
+                <form
+                  className="flex flex-col gap-4"
+                  onSubmit={handleLogin(onLogin)}
+                >
+                  <Input
+                    label="Email"
+                    type="email"
+                    variant="bordered"
+                    {...loginRegister("email", { required: true })}
+                  />
+                  <Input
+                    label="Password"
+                    type="password"
+                    variant="bordered"
+                    {...loginRegister("password", { required: true })}
+                  />
+                  <Button type="submit" className="bg-[#BBA782] text-white">
+                    Sign In
+                  </Button>
+                </form>
+                <div className=" flex text-sm justify-center">
+                  Need an account?
+                  <Button onPress={()=>setIsSignIn(false)} variant="flat" className="bg-white font-semibold text-[#0b1f36] pb-3" size="sm">SignUp</Button>
+                </div>
+              </CardBody>
+            </Card>
+          </div>
+              </>
+            )
+          }
+          {
+            isSignIn? (<>
+            <p></p>
+            
+            </>) :(<>
+            <p>Need an Account?</p>
+            </>)
+          }
       </div>
     </div>
   );

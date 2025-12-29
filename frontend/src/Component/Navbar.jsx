@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Search, BellDot, Settings, LogOut, Users, Newspaper } from "lucide-react";
+import { Search, BellDot, Settings, LogOut, Users, Newspaper, MessageCircleQuestionMark } from "lucide-react";
 import { Button, Card, CardBody, Input, Link, Navbar, NavbarBrand, NavbarContent, NavbarItem, NavbarMenu, NavbarMenuItem, NavbarMenuToggle, Popover, PopoverContent, PopoverTrigger, User,} from "@heroui/react";
 import { notifications } from "../assets/SampleInformation";
 import { useNavigate } from "react-router-dom";
@@ -40,6 +40,10 @@ function NavbarPart() {
           <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/admin/news")}>
            <Newspaper size={16}/> Publish News
           </Button>
+
+          <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/admin/query")}>
+           <MessageCircleQuestionMark size={16}/> Queries
+          </Button>
         </>
       )}
         <Button variant="light" className="justify-start gap-2" onPress={() => navigate("/profile")}>
@@ -54,7 +58,6 @@ function NavbarPart() {
       </CardBody>
     </Card>
   );
-
   return (
     <Navbar maxWidth="full" className="bg-white" onMenuOpenChange={setIsMenuOpen}>
       <NavbarMenuToggle
@@ -87,7 +90,7 @@ function NavbarPart() {
         {currentUser ? (
           <>
             {/* SEARCH */}
-            <NavbarItem>
+            <NavbarItem className="hidden md:block">
               <Input
                 classNames={{
                   base: "max-w-[10rem] h-10",
@@ -102,7 +105,7 @@ function NavbarPart() {
             </NavbarItem>
 
             {/* NOTIFICATIONS */}
-            <NavbarItem>
+            <NavbarItem className="hidden md:block">
               <Popover showArrow placement="bottom-end" offset={10}>
                 <PopoverTrigger>
                   <Button isIconOnly variant="light">

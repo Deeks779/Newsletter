@@ -26,7 +26,7 @@ export default function AdminNews() {
       id: Date.now(),
       title,
       article,
-      date: new Date().toLocaleDateString("en-GB"), // 25/12/2025
+      date: new Date().toLocaleDateString("en-GB"),
     };
 
     const updatedNews = [newItem, ...news];
@@ -75,7 +75,7 @@ export default function AdminNews() {
         <p className="text-gray-500 text-sm">No news yet</p>
       ) : (
         news.map((n) => (
-          <Card key={n.id}>
+          <Card key={n.id} className="mb-2">
             <CardBody>
               <div className="flex justify-between items-start gap-4">
                 <div className="space-y-2">

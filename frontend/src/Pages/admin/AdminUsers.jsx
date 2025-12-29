@@ -21,7 +21,7 @@ export default function AdminUsers() {
   };
 
   return (
-    <div className="min-h-screen overflow-x-hidden m-25">
+    <div className="px-4 py-6 pb-24 min-h-screen justify-center items-center">
       <h1 className="text-2xl font-semibold mb-6">All Users</h1>
 
       <Table

@@ -207,3 +207,46 @@ export const communities = [
       img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644",
     },
   ];
+
+  // Monthly articles
+export const monthlyData = [
+    { month: "Jan", articles: 5 },
+    { month: "Feb", articles: 8 },
+    { month: "Mar", articles: 6 },
+    { month: "Apr", articles: 10 },
+    { month: "May", articles: 7 },
+    { month: "Jun", articles: 12 },
+  ];
+  
+  // Weekly articles
+export const weeklyData = [
+    { week: "Week 1", articles: 4 },
+    { week: "Week 2", articles: 6 },
+    { week: "Week 3", articles: 3 },
+    { week: "Week 4", articles: 5 },
+  ];
+  
+  // Daily articles
+export const dailyData = [
+    { day: "Mon", articles: 1 },
+    { day: "Tue", articles: 2 },
+    { day: "Wed", articles: 1 },
+    { day: "Thu", articles: 3 },
+    { day: "Fri", articles: 2 },
+    { day: "Sat", articles: 1 },
+    { day: "Sun", articles: 0 },
+  ];
+  
+  // Category comparison
+export const categoryData = [
+    { category: "Technology", articles: 18 },
+    { category: "Business", articles: 12 },
+    { category: "Culture", articles: 9 },
+    { category: "Events", articles: 14 },
+  ];
+
+export const statusData = [
+  { name: "Published", value: 38 },
+  { name: "Draft", value: 9 },
+  { name: "Archived", value: 6 },
+];

@@ -13,6 +13,9 @@ import CommunitiesPage from './Pages/CommunitiesPage';
 import AdminUsers from './Pages/admin/AdminUsers';
 import AdminNews from './Pages/admin/AdminNews';
 import RequireRole from './routes/RequireRole';
+import ContactUs from './Pages/ContactUs';
+import StatisticsPage from './Pages/StatisticsPage';
+import AdminQuery from './Pages/admin/AdminQuery';
 function App() {
   return (
   <div className="flex min-h-screen w-full overflow-x-hidden">
@@ -32,6 +35,8 @@ function App() {
           <Route path='/emp-center' element={<EmployeeCenter/>}/>
           <Route path='/library' element={<ResourceLibrary/>}/>
           <Route path='/communities' element={<CommunitiesPage/>}/>
+          <Route path='/contact' element={<ContactUs/>}/>
+          <Route path='/stats' element={<StatisticsPage/>}/>
           <Route path="/admin/users" element={
               <RequireRole role="admin">
                 <AdminUsers />
@@ -41,6 +46,12 @@ function App() {
           <Route path="/admin/news" element={
               <RequireRole role="admin">
                 <AdminNews />
+              </RequireRole>
+            }
+          />
+          <Route path="/admin/query" element={
+              <RequireRole role="admin">
+                <AdminQuery />
               </RequireRole>
             }
           />

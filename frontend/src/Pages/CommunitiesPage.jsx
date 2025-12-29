@@ -74,37 +74,6 @@ export default function CommunitiesPage() {
           </div>
         </div>
       </section>
-
-      <section className="relative py-20 bg-[#0b1f36]">
-        <img
-                  src={quarterImg3}   
-                  alt=""
-                  className="absolute bottom-0 right-0 w-100 h-100 opacity-80 z-0 pointer-events-none"
-                />
-        <h2 className="text-center text-2xl font-semibold mb-10">
-          Upcoming Community Events
-        </h2>
-
-        <div className="max-w-4xl mx-auto space-y-6 px-6">
-          {upcomingEvents.map((e, i) => (
-            <Card key={i} className="bg-white text-black rounded-md">
-              <CardBody className="flex flex-row items-center gap-6">
-                <div className="text-center pr-4 border-r border-r-[#BBA782]">
-                  <p className="text-2xl font-bold text-[#BBA782]">{e.day}</p>
-                  <p className="text-xs">DEC 2025</p>
-                </div>
-
-                <div>
-                  <p className="font-semibold">{e.title}</p>
-                  <p className="text-sm text-gray-500">
-                    Community-led initiatives and engaging discussions.
-                  </p>
-                </div>
-              </CardBody>
-            </Card>
-          ))}
-        </div>
-      </section>
     </div>
   );
 }
